@@ -39,9 +39,11 @@ df['Status Mission'] = df['Status Mission'].apply(Status)
 temp1 = df[df['Location'] == 'Russia']['Status Mission'].mean()
 temp2 = df[df['Location'] != 'Russia']['Status Mission'].mean()
 
-temp1 = temp*100
+temp1 = temp1*100
 temp2 = temp2*100
 
 
 print(temp1)
 print(temp2)
+
+df['Status Mission'].head(50)
