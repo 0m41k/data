@@ -1,5 +1,5 @@
 import pandas as pd
-df = pd.read_csv('C:/Users/solda/Music/Pytion/DataScince/Project/Space_Corrected.csv')
+df = pd.read_csv('C:/Users/solda/OneDrive/Документы/GitHub/data/Space_Corrected.csv')
 
 
 
