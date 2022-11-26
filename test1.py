@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-df = pd.read_csv('Space_Corrected.csv')  #читаем файл
+df = pd.read_csv('C:/Users/solda/OneDrive/Документы/GitHub/data/Space_Corrected.csv')  #читаем файл
 
 temp = df['Rocket'].dropna()                                                        #преобразовываем стоимость миссии в цифры ( но нам это не надо )
 def cost_to_float(cost):
@@ -55,13 +55,30 @@ final4 = temp4/cost4
 final5 = temp5/cost5
 final6 = temp6/cost6
 
-print('    Russia:', temp1, ',,', cost1, ',,', final1)
-print('       USA:', temp2, ',,', cost2, ',,', final2)
-print('    France:', temp4, ',,', cost4, ',,', final4)
-print('     China:', temp5, ',,', cost5, ',,', final5)
-print('     Japan:', temp6, ',,', cost6, ',,', final6)
+print('    Russia:', temp1, '  ', cost1, '  ', final1)
+print('       USA:', temp2, '  ', cost2, ' ', final2)
+print('    France:', temp4, '  ', cost4, '   ', final4)
+print('     China:', temp5, '  ', cost5, '  ', final5)
+print('     Japan:', temp6, '  ', cost6, '  ', final6)
+
 
 s = pd.Series(data = [final1, final2, final4, final5, final6], index = ['Russia', 'USA', 'France', 'China', 'Japan'])
-s.plot(kind = 'pie')
+s.plot(kind = 'pie', autopct='%.2f', explode=[0,0,0,0.2,0], shadow=True)
+plt.show()
+
+s1 = pd.Series(data = [final1, final2, final4, final5, final6], index = ['Russia', 'USA', 'France', 'China', 'Japan'])
+s1.plot(kind = 'pie', autopct='%.2f', explode=[0.2,0,0,0,0], shadow=True)
+plt.show()
+
+s2 = pd.Series(data = [final1, final2, final4, final5, final6], index = ['Russia', 'USA', 'France', 'China', 'Japan'])
+s2.plot(kind = 'pie', autopct='%.2f', explode=[0,0,0,0,0.2], shadow=True)
+plt.show()
+
+s3 = pd.Series(data = [final1, final2, final4, final5, final6], index = ['Russia', 'USA', 'France', 'China', 'Japan'])
+s3.plot(kind = 'pie', autopct='%.2f', explode=[0,0,0.2,0,0], shadow=True)
+plt.show()
+
+s4 = pd.Series(data = [final1, final2, final4, final5, final6], index = ['Russia', 'USA', 'France', 'China', 'Japan'])
+s4.plot(kind = 'pie', autopct='%.2f', explode=[0,0.2,0,0,0], shadow=True)
 plt.show()
 #результаты
