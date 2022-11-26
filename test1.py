@@ -1,5 +1,5 @@
 import pandas as pd
-
+import matplotlib.pyplot as plt
 df = pd.read_csv('Space_Corrected.csv')  #читаем файл
 
 temp = df['Rocket'].dropna()                                                        #преобразовываем стоимость миссии в цифры ( но нам это не надо )
@@ -31,34 +31,37 @@ def Status(stat):                                                               
 df['Status Mission'] = df['Status Mission'].apply(Status)
 # cортировка
 
-temp7 = df[df['Location'] == ' Kazakhstan'].valuse()
-
-temp1 = df[df['Location'] == ' Russia']['Status Mission'].mean()                     #находим средний показатель успешности запуска рокеты
+temp1 = df[(df['Location'] == ' Russia') | (df['Location'] == ' Kazakhstan')]['Status Mission'].mean()                     #находим средний показатель успешности запуска рокеты
 temp2 = df[df['Location'] == ' USA']['Status Mission'].mean()
-temp3 = df[df['Location'] == ' Kazakhstan']['Status Mission'].mean()
 temp4 = df[df['Location'] == ' France']['Status Mission'].mean()
 temp5 = df[df['Location'] == ' China']['Status Mission'].mean()
 temp6 = df[df['Location'] == ' Japan']['Status Mission'].mean()
 
-cost1 = df[df['Location'] == ' Russia']['Rocket'].mean()                     #находим средний показатель цены запуска рокеты
+cost1 = df[(df['Location'] == ' Russia') | (df['Location'] == ' Kazakhstan')]['Rocket'].mean()                     #находим средний показатель цены запуска рокеты
 cost2 = df[df['Location'] == ' USA']['Rocket'].mean()
-cost3 = df[df['Location'] == ' Kazakhstan']['Rocket'].mean()
 cost4 = df[df['Location'] == ' France']['Rocket'].mean()
 cost5 = df[df['Location'] == ' China']['Rocket'].mean()
 cost6 = df[df['Location'] == ' Japan']['Rocket'].mean()
 
 temp1 = temp1*100                                                                       # преобразовывае в проценты
 temp2 = temp2*100
-temp3 = temp3*100
 temp4 = temp4*100
 temp5 = temp5*100
 temp6 = temp6*100
 
+final1 = temp1/cost1
+final2 = temp2/cost2
+final4 = temp4/cost4
+final5 = temp5/cost5
+final6 = temp6/cost6
 
-print('    Russia:', temp1, ',,,,', cost1)
-print('       USA:', temp2, ',,,,', cost2)
-print('Kazakhstan:', temp3, ',,,,', cost3)
-print('    France:', temp4, ',,,,', cost4)
-print('     China:', temp5, ',,,,', cost5)
-print('     Japan:', temp6, ',,,,', cost6)
+print('    Russia:', temp1, ',,', cost1, ',,', final1)
+print('       USA:', temp2, ',,', cost2, ',,', final2)
+print('    France:', temp4, ',,', cost4, ',,', final4)
+print('     China:', temp5, ',,', cost5, ',,', final5)
+print('     Japan:', temp6, ',,', cost6, ',,', final6)
+
+s = pd.Series(data = [final1, final2, final4, final5, final6], index = ['Russia', 'USA', 'France', 'China', 'Japan'])
+s.plot(kind = 'pie')
+plt.show()
 #результаты
