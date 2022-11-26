@@ -62,27 +62,7 @@ print('     China:', temp5, '  ', cost5, '  ', final5)
 print('     Japan:', temp6, '  ', cost6, '  ', final6)
 
 
-s = pd.Series(data = [final1, final2, final4, final5, final6], index = ['Russia', 'USA', 'France', 'China', 'Japan'])
-s.plot(kind = 'pie', autopct='%.2f', explode=[0,0,0,0.2,0], shadow=True)
-plt.show()
-
-s1 = pd.Series(data = [final1, final2, final4, final5, final6], index = ['Russia', 'USA', 'France', 'China', 'Japan'])
-s1.plot(kind = 'pie', autopct='%.2f', explode=[0.2,0,0,0,0], shadow=True)
-plt.show()
-
-s2 = pd.Series(data = [final1, final2, final4, final5, final6], index = ['Russia', 'USA', 'France', 'China', 'Japan'])
-s2.plot(kind = 'pie', autopct='%.2f', explode=[0,0,0,0,0.2], shadow=True)
-plt.show()
-
-s3 = pd.Series(data = [final1, final2, final4, final5, final6], index = ['Russia', 'USA', 'France', 'China', 'Japan'])
-s3.plot(kind = 'pie', autopct='%.2f', explode=[0,0,0.2,0,0], shadow=True)
-plt.show()
-
-s4 = pd.Series(data = [final1, final2, final4, final5, final6], index = ['Russia', 'USA', 'France', 'China', 'Japan'])
-s4.plot(kind = 'pie', autopct='%.2f', explode=[0,0.2,0,0,0], shadow=True)
-plt.show()
-
 s5 = pd.Series(data = [final1, final2, final4, final5, final6], index = ['Russia', 'USA', 'France', 'China', 'Japan'])
-s5.plot(kind = 'pie', autopct='%.2f', explode=[0,0,0,0,0], shadow=True)
+s5.plot(kind = 'pie', autopct='%.2f', shadow=True)
 plt.show()
 #результаты
