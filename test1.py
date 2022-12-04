@@ -61,8 +61,15 @@ print('    France:', temp4, '  ', cost4, '   ', final4)
 print('     China:', temp5, '  ', cost5, '  ', final5)
 print('     Japan:', temp6, '  ', cost6, '  ', final6)
 
+s1 = pd.Series(data = [temp1 , temp2 , temp4 , temp5 , temp6], index = ['Russia', 'USA', 'France', 'China', 'Japan'])
+s1.plot(kind = 'barh', grid = True, title='Процент успешности')
+plt.show()
+
+s2 = pd.Series(data = [cost1 , cost2 , cost4 , cost5 , cost6], index = ['Russia', 'USA', 'France', 'China', 'Japan'])
+s2.plot(kind = 'barh', grid = True, title='Средняя цена')
+plt.show()
 
 s5 = pd.Series(data = [final1, final2, final4, final5, final6], index = ['Russia', 'USA', 'France', 'China', 'Japan'])
-s5.plot(kind = 'pie', autopct='%.2f', shadow=True)
+s5.plot(kind = 'pie', autopct='%.2f', shadow=True, title='Коэфицент цена/качество')
 plt.show()
 #результаты
