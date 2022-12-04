@@ -55,6 +55,8 @@ final4 = temp4/cost4
 final5 = temp5/cost5
 final6 = temp6/cost6
 
+# расчеты
+
 print('    Russia:', temp1, '  ', cost1, '  ', final1)
 print('       USA:', temp2, '  ', cost2, ' ', final2)
 print('    France:', temp4, '  ', cost4, '   ', final4)
