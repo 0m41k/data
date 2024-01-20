@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-df = pd.read_csv('C:/Users/solda/Music/GitHub/data/Space_Corrected.csv')  #читаем файл
+df = pd.read_csv('C:/Users/solda/OneDrive/Документы/Python/data/SpaceCorrected/Space_Corrected.csv')  #читаем файл
 
 temp = df['Rocket'].dropna()                                                        #преобразовываем стоимость миссии в цифры ( но нам это не надо )
 def cost_to_float(cost):

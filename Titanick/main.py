@@ -1,7 +1,7 @@
 # Здесь должен быть твой код
 import pandas as pd
 
-df = pd.read_csv('C:/Users/solda/Music/GitHub/ML/ML/titanic.csv')
+df = pd.read_csv('C:/Users/solda/OneDrive/Документы/Python/data/Titanick/titanic.csv')
 
 df.drop(['PassengerId', 'Name', 'Ticket', 'Cabin'], inplace=True, axis=1)
 
